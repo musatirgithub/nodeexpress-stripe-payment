@@ -3,6 +3,7 @@ require('express-async-errors');
 
 const express = require('express');
 const app = express();
+const stripeController = require('./controllers/stripeController')
 
 // controller
 
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.static('./public'));
 
 // stripe
-app.post('/stripe', );
+app.post('/stripe', stripeController);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
